@@ -8,7 +8,7 @@ class EmailAddressParser
   end
 
   def parse
-    # We're going to do a few things in one command. First, split the emails by comma or whitespace. Then, clean up the list by removing any empty strings. Lastly, we'll throw out any email that's redundant.
-    @emails = @emails.split(/\s|,/).select{ |element| element.length > 0 }.uniq
+    # First, split the emails by comma or whitespace using RegEx. Then, we'll throw out any email that's redundant.
+    @emails = @emails.split(/\s|,\s/).uniq
   end
 end
